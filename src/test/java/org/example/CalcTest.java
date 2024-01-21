@@ -4,18 +4,18 @@ import org.junit.Test;
 
 import br.gov.frameworkdemoiselle.behave.controller.BehaveContext;
 
-public class CalcTest {
+package com.ejemplo;
 
-	private BehaveContext eng = null;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-	public CalcTest() {
-		eng = BehaveContext.getInstance();
-		eng.addSteps(new MySteps());
-	}
+public class CalculadoraTest {
 
-	@Test
-	public void testAllStories() throws Throwable {
-		eng.run("/stories");
-	}
+    @Test
+    public void testCalcularMCD() {
+        Calculadora calc = new Calculadora();
+        assertEquals(5, calc.calcularMCD(10, 15));
+    }
+}
 
 }
